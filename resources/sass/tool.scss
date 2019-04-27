@@ -4,21 +4,21 @@ ul.sidemenu {
   margin: 0px;
   padding: 0px;
 }
-.dropdown {
+.sidebar-dropdown {
   position: relative;
 }
-.dropdown a {
+.sidebar-dropdown a {
   text-decoration: none;
 }
-.dropdown [data-toggle="dropdown"] {
+.sidebar-dropdown [data-toggle="dropdown"] {
   display: block;
   color: white;
   padding: 10px 0px;
 }
-.dropdown [data-toggle="dropdown"]:hover {
+.sidebar-dropdown [data-toggle="dropdown"]:hover {
 
 }
-.dropdown [data-toggle="dropdown"]:before {
+.sidebar-dropdown [data-toggle="dropdown"]:before {
   position: absolute;
   display: block;
   content: '\25BC';
@@ -35,7 +35,7 @@ ul.sidemenu {
   -webkit-transition: -webkit-transform 0.6s;
   transition: transform 0.6s;
 }
-.dropdown > .dropdown-menu {
+.sidebar-dropdown > .dropdown-menu {
   max-height: 0;
   overflow: hidden;
   list-style: none;
@@ -53,16 +53,16 @@ ul.sidemenu {
   -moz-animation: hideAnimation 0.4s ease-out;
   -webkit-animation: hideAnimation 0.4s ease-out;
 }
-.dropdown > .dropdown-menu li {
+.sidebar-dropdown > .dropdown-menu li {
   padding: 0;
 }
-.dropdown > .dropdown-menu li a {
+.sidebar-dropdown > .dropdown-menu li a {
   display: block;
 }
-.dropdown > .dropdown-menu li a:hover {
+.sidebar-dropdown > .dropdown-menu li a:hover {
 
 }
-.dropdown > input[type="checkbox"] {
+.sidebar-dropdown > input[type="checkbox"] {
   opacity: 0;
   display: block;
   position: absolute;
@@ -71,7 +71,7 @@ ul.sidemenu {
   height: 100%;
   cursor: pointer;
 }
-.dropdown > input[type="checkbox"]:checked ~ .dropdown-menu {
+.sidebar-dropdown > input[type="checkbox"]:checked ~ .dropdown-menu {
   max-height: 9999px;
   display: block;
   -moz-transform: scaleY(1);
@@ -87,7 +87,7 @@ ul.sidemenu {
   transition: max-height 2s ease-in-out;
   margin-top: 10px;
 }
-.dropdown > input[type="checkbox"]:checked + a[data-toggle="dropdown"]:before {
+.sidebar-dropdown > input[type="checkbox"]:checked + a[data-toggle="dropdown"]:before {
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);

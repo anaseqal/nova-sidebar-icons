@@ -2,7 +2,7 @@
 <ul class="sidemenu">
     @foreach($navigation as $group => $resources)
       @if (count($groups) > 1)
-      <li class="dropdown mb-2">
+      <li class="sidebar-dropdown mb-2">
         <input type="checkbox" />
         <a href="#" data-toggle="dropdown">
 
@@ -34,7 +34,7 @@
 
       @else
         @foreach($resources as $resource)
-        <li class="dropdown">
+        <li class="sidebar-dropdown">
             <router-link :to="{
                 name: 'index',
                 params: {
