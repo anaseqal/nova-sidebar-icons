@@ -18,7 +18,23 @@ Publish navigation view file:
 php artisan vendor:publish --provider="Anaseqal\NovaSidebarIcons\ToolServiceProvider" --force
 ```
 
-Usage:
+Register the tool in `NovaServiceProvider`:
+
+```php
+use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
+...
+
+public function tools()
+    {
+        return [
+            new NovaSidebarIcons,
+            ...
+        ];
+    }
+
+```
+
+## Usage
 
 set the icon in your nova resource, for example:
 
