@@ -59,7 +59,7 @@ This is the recommended approach. In the example above we have used a blade file
 // By using an image tag
 public static function icon() 
 {
-    return <img src="/path/to/image.svg" />
+    return '<img src="/path/to/image.svg" />';
 }
 
 // Or simply return it as a string
