@@ -36,21 +36,44 @@ public function tools()
 
 ## Usage
 
-set the icon in your nova resource, for example:
+Set the icon in your Nova resource, for example:
+```php
+/**
+ * The icon of the resource.
+ *
+ * @return string
+ */
+public static function icon() 
+{
+    // Assuming you have a blade file containing an image
+    // in resources/views/vendor/nova/svg/icon-user.blade.php
+    return view('nova::svg.icon-user')->render();
+}
+```
+
+This is the recommended approach. In the example above we have used a blade file containing an svg, but if you'd want to it's is possible return the entire svg string
+
+***Examples of other approaches***
 
 ```php
-    /**
-     * The icon of the resource.
-     *
-     * @var string
-     */
-    public static $icon = '
-        <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path fill="var(--sidebar-icon)" d="M4.06 13a8 8 0 0 0 5.18 6.51A18.5 18.5 0 0 1 8.02 13H4.06zm0-2h3.96a18.5 18.5 0 0 1 1.22-6.51A8 8 0 0 0 4.06 11zm15.88 0a8 8 0 0 0-5.18-6.51A18.5 18.5 0 0 1 15.98 11h3.96zm0 2h-3.96a18.5 18.5 0 0 1-1.22 6.51A8 8 0 0 0 19.94 13zm-9.92 0c.16 3.95 1.23 7 1.98 7s1.82-3.05 1.98-7h-3.96zm0-2h3.96c-.16-3.95-1.23-7-1.98-7s-1.82 3.05-1.98 7zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"
-            />
-        </svg>
-    ';
+// By using an image tag
+public static function icon() 
+{
+    return '<img src="/path/to/image.svg" />';
+}
+
+// Or simply return it as a string
+public static function icon() 
+{
+    return '<svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="var(--sidebar-icon)" d="M4.06 13a8 8 0 0 0 5.18 .... e.t.c."/>
+            </svg>';
+}
+    
 ```
+
+## Backwards compatibility
+Please note that this package used to use a static $icon property on the resource. This has been replaced with the static icon method. The icon property is still supported to preserve backwards compatibility.
 
 ## License
 
