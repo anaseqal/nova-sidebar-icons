@@ -308,3 +308,30 @@ ul.sidemenu {
     transform: scaleY(0);
   }
 }
+
+/** Fix of displaying the icon in the correct position if the document is RTL*/
+html[dir="rtl"] {
+
+  .sidebar-dropdown [data-toggle="dropdown"]:before {
+    display: none;
+  }
+
+  .sidebar-dropdown [data-toggle="dropdown"]:after {
+    position: absolute;
+    display: block;
+    content: '\25BC';
+    font-size: 0.7em;
+    color: var(--sidebar-icon);
+    top: 13px;
+    right: 5px;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-transition: -moz-transform 0.6s;
+    -o-transition: -o-transform 0.6s;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+  }
+
+}
